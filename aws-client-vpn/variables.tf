@@ -17,7 +17,7 @@ variable "organization_name" {
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map
   default     = {}
   description = "Extra tags to attach to resources"
 }
@@ -37,4 +37,9 @@ variable "log_group_name" {
 variable "logs_retention" {
   default     = 30
   description = "Retention in days for CloudWatch Log Group"
+}
+
+variable "target_network_cidrs" {
+    type = list(string)
+    description = "Target CIDR list for authorisation"
 }
